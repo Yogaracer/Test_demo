@@ -65,7 +65,9 @@ public class TestDemo {
 
         //3. testo rezultatas
         //  Assert.assertEquals(actualResult, expectedResult);
-        Assert.assertTrue(actualResult == expectedResult);
-                String.format("Actual: %s, Expected: %s", actualResult, expectedResult);
+        Assert.assertTrue(
+                actualResult == expectedResult,
+                String.format("Actual: %s, Expected: %s", actualResult, expectedResult)
+        );
     }
 }
