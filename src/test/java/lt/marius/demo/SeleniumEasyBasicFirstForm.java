@@ -76,3 +76,29 @@ public class SeleniumEasyBasicFirstForm {
 
     }
 
+    @Test
+    public void testTwoInputFieldsNegative() {
+        String enterValueA = "5";
+        String enterValueB = "aa";
+        String expectedResult = "NaN";
+        String actualResult;
+
+        WebElement inputEnterValueA = driver.findElement(By.xpath("//input[@id='sum1']"));
+        inputEnterValueA.sendKeys(enterValueA);
+
+        WebElement inputEnterValueB = driver.findElement(By.xpath("//input[@id='sum2']"));
+        inputEnterValueB.sendKeys(enterValueB);
+
+        WebElement buttonSGetTotal = driver.findElement(By.xpath("//form[@id='gettotal']//button"));
+        buttonSGetTotal.click();
+
+        WebElement elementTotal = driver.findElement(By.xpath("//span[@id='displayvalue']"));
+        actualResult = elementTotal.getText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+        String.format("Actual: %s; Expected: %s", actualResult, expectedResult);
+
+    }
+}
+
+
