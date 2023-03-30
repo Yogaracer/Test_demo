@@ -7,13 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class TestSeleniumDemo {
 
-    private WebElement driver;
+ WebElement driver;
 
     @Test
 // web puslapio atidarymo metodas
@@ -89,8 +90,10 @@ public class TestSeleniumDemo {
 
         WebElement inputUserEmail = driver.findElement(By.xpath("//input [@id='userEmail']"));
         inputUserEmail.sendKeys(messageEmail);
+
         WebElement buttonSubmit = driver.findElement(By.xpath("//button[@id='submit']"));
         buttonSubmit.click();
+
         WebElement paragraphUserEmail = driver.findElement(By.xpath("//p[@id='email']"));
         actualResult = paragraphUserEmail.getText();
 
@@ -98,7 +101,6 @@ public class TestSeleniumDemo {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-
 
     }
 
