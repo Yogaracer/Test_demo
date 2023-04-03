@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -19,27 +20,8 @@ public class BasicFirstFormTest {
 
     @BeforeTest
     public void setUp() {
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("start-maximized");
-        options.addArguments("--force-device-scale-factor=1.5");
-
-        driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
+        BasicFirstFormPage.open();
     }
-
-
-
-    public class TextBoxTest {
-
-        @BeforeMethod
-        public void setUp() {
-            TextBoxPage.open();
-        }
-
 
     @Test
     public void testSingleInputField() {
@@ -103,6 +85,11 @@ public class BasicFirstFormTest {
 //        Assert.assertEquals(actualResult, expectedResult);
 //        String.format("Actual: %s; Expected: %s", actualResult, expectedResult);
 
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        BasicFirstFormPage.closeDriver();
     }
 }
 
