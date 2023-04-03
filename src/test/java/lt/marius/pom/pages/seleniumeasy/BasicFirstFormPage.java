@@ -4,6 +4,7 @@ import lt.marius.pom.pages.Common;
 import org.openqa.selenium.By;
 
 public class BasicFirstFormPage {
+
     public static void open() {
         Common.setUpDriver();
         Common.OpenUrl("http://demo.seleniumeasy.com/basic-first-form-demo.html");
