@@ -11,12 +11,6 @@ public class BasicFirstFormPage {
         Common.OpenUrl("http://demo.seleniumeasy.com/basic-first-form-demo.html");
     }
 
-    public static void closeDriver() {
-
-        Common.sleep(3000);
-        Common.closeDriver();
-    }
-
     public static void enterMessage(String inputMessage) {
         Common.sendKeysToElement(
                 Locators.SeleniumEasy.BasicFirstForm.inputUserMessage,

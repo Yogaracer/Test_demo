@@ -1,17 +1,19 @@
 package lt.marius.pom.tests.seleniumeasy;
 
 import lt.marius.pom.pages.seleniumeasy.BasicFirstFormPage;
+import lt.marius.pom.tests.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class BasicFirstFormTest {
-
+public class BasicFirstFormTest extends TestBase {
     @BeforeTest
+    @Override
     public void setUp() {
         BasicFirstFormPage.open();
     }
+
 
     @Test
     public void testSingleInputField() {
@@ -57,11 +59,6 @@ public class BasicFirstFormTest {
         actualResult = BasicFirstFormPage.readMessageTotal();
 
         Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        BasicFirstFormPage.closeDriver();
     }
 }
 

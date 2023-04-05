@@ -1,21 +1,19 @@
 package lt.marius.pom.tests.demoqa;
 
 import lt.marius.pom.pages.demoqa.TextBoxPage;
-import lt.marius.pom.utils.Driver;
-import org.openqa.selenium.WebDriver;
+import lt.marius.pom.tests.TestBase;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
-public class TextBoxTest {
+public class TextBoxTest extends TestBase {
 
-    @BeforeMethod
+    @BeforeTest
+    @Override
     public void setUp() {
         TextBoxPage.open();
     }
-
 
     @Test
     public void seleniumDemo() {
@@ -60,9 +58,5 @@ public class TextBoxTest {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-       TextBoxPage.closeDriver();
-    }
 
 }
