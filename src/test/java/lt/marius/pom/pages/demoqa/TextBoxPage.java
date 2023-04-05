@@ -1,8 +1,7 @@
 package lt.marius.pom.pages.demoqa;
 
 import lt.marius.pom.pages.Common;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import lt.marius.pom.pages.Locators;
 
 public class TextBoxPage {
     public static void open() {
@@ -17,29 +16,28 @@ public class TextBoxPage {
     public static void enterFullName(String messageFullName) {
 
         Common.sendKeysToElement(
-                By.xpath("//input [@id='userName']"),
+                Locators.Demoqa.TextBox.inputUserName,
                 messageFullName
         );
     }
 
     public static void clickOnButtonSubmit() {
 
-        Common.clickOnElement(By.xpath("//button[@id='submit']"));
+        Common.clickOnElement(Locators.Demoqa.TextBox.buttonSubmit); // uzvadiname pagal xpath: button[@id='submit']"
     }
 
     public static String readFullNameMessage() {
 
-        return Common.getTextFromElement(By.xpath("//[p@id='name']"));
+        return Common.getTextFromElement(Locators.Demoqa.TextBox.paragraphName); // paragraphName pagal elemento xpath id inspection'e
     }
 
     public static void enterEmailAdress(String messageEmail) {
-        Common.sendKeysToElement(
-                By.xpath("//input[@id='userEmail']"),
+        Common.sendKeysToElement(Locators.Demoqa.TextBox.inputUserEmail,
                 messageEmail
         );
     }
 
     public static String readEmailMessage() {
-        return Common.getTextFromElement(By.xpath("//p[@id='email']"));
+        return Common.getTextFromElement(Locators.Demoqa.TextBox.paragraphEmail);
     }
 }

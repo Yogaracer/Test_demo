@@ -27,7 +27,6 @@ public class TextBoxTest {
         String expectedResult = "MariusTalalas";
         String actualResult;
 
-
         TextBoxPage.enterFullName(messageFullName);
         TextBoxPage.clickOnButtonSubmit();
         actualResult = TextBoxPage.readFullNameMessage();

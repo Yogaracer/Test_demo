@@ -1,6 +1,7 @@
 package lt.marius.pom.pages.seleniumeasy;
 
 import lt.marius.pom.pages.Common;
+import lt.marius.pom.pages.Locators;
 import org.openqa.selenium.By;
 
 public class BasicFirstFormPage {
@@ -16,39 +17,36 @@ public class BasicFirstFormPage {
         Common.closeDriver();
     }
 
-
     public static void enterMessage(String inputMessage) {
         Common.sendKeysToElement(
-                By.xpath("//input[@id='user-message']"),
+                Locators.SeleniumEasy.BasicFirstForm.inputUserMessage,
                 inputMessage);
     }
 
     public static void clickOnButtonShowMessage() {
-        Common.clickOnElement(By.xpath("//button[contains(@onclick,'show')]"));
+        Common.clickOnElement(Locators.SeleniumEasy.BasicFirstForm.buttonShowMessage);
     }
 
     public static String readMessage() {
 
-        return Common.getTextFromElement(By.xpath("//*[@id='display']"));
+        return Common.getTextFromElement(Locators.SeleniumEasy.BasicFirstForm.spanDisplay);
     }
 
     public static void inputValueA(String value) {
-        Common.sendKeysToElement(
-                By.xpath("//input[@id='value1']"),
+        Common.sendKeysToElement(Locators.SeleniumEasy.BasicFirstForm.inputValueA,
                 value);
     }
 
     public static void inputValueB(String value) {
-        Common.sendKeysToElement(
-                By.xpath("//input[@id='value2']"),
+        Common.sendKeysToElement(Locators.SeleniumEasy.BasicFirstForm.inputValueB,
                 value);
     }
 
     public static void clickButtonGetTotal() {
-        Common.clickOnElement(By.xpath("//form[@id='gettotal']//button"));
+        Common.clickOnElement(Locators.SeleniumEasy.BasicFirstForm.buttonGetTotal);
     }
 
     public static String readMessageTotal() {
-        return Common.getTextFromElement(By.xpath("//span[@id='displayvalue']"));
+        return Common.getTextFromElement(Locators.SeleniumEasy.BasicFirstForm.spanDisplayValue);
     }
 }
