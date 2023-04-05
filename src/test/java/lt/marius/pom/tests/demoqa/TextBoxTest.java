@@ -18,8 +18,6 @@ public class TextBoxTest {
 
 
     @Test
-// web puslapio atidarymo metodas
-
     public void seleniumDemo() {
     }
 

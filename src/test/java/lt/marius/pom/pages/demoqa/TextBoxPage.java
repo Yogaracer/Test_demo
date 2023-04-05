@@ -23,6 +23,7 @@ public class TextBoxPage {
     }
 
     public static void clickOnButtonSubmit() {
+
         Common.clickOnElement(By.xpath("//button[@id='submit']"));
     }
 
